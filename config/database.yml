@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: models-databases-relationships_development
+
+test:
+  <<: *default
+  database: models-databases-relationships_test
+
+production:
+  <<: *default
+  database: models-databases-relationships_production
+  username: models-databases-relationships
+  password: <%= ENV['MODELS-DATABASES-RELATIONSHIPS_DATABASE_PASSWORD'] %>
